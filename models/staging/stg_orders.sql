@@ -1,4 +1,5 @@
 select 
+{{ dbt_utils.generate_surrogate_key(['o.order_ID', 'c.customer_id','p.product_id']) }} as sk_orders,
 o.order_ID,
 o.order_date,
 o.Ship_mode,
